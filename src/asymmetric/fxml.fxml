@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1" fx:controller="asymmetric.Asymmetric">
+    <top>
+        <VBox>
+            <HBox>
+                <Button text="Generate Keys" onMouseClicked="#generate"/>
+                <Button text="Encrypt" onMouseClicked="#encrypt"/>
+                <Button text="Decrypt" onMouseClicked="#decrypt"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <GridPane>
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" >
+                <Button text="Public Key" disable="true"/>
+                <Button text="Export" onMouseClicked="#exportPublic"/>
+                <Button text="Import" onMouseClicked="#importPublic"/>
+            </HBox>
+            <TextArea fx:id="publicKeyText" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                      editable="false" style="-fx-font-family: monospace" prefHeight="240"/>
+
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" >
+                <Button text="Private Key" disable="true"/>
+                <Button text="Export" onMouseClicked="#exportPrivate"/>
+                <Button text="Import" onMouseClicked="#importPrivate"/>
+            </HBox>
+            <TextArea fx:id="privateKeyText" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                      editable="false" style="-fx-font-family: monospace" prefHeight="240"/>
+
+            <Label text="Decrypted Text" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextArea fx:id="decryptedText" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+            <Label text="Encrypted Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextArea fx:id="encryptedText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        </GridPane>
+    </center>
+</BorderPane>

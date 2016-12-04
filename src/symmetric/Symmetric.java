@@ -1,3 +1,5 @@
+package symmetric;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -21,7 +23,7 @@ import java.util.concurrent.*;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class Main extends Application {
+public class Symmetric extends Application {
     private static final List<String> algorithms = Arrays.asList("DES", "DESEDE", "RIJNDAEL", "RC2");
     private static final List<String> modes = Arrays.asList("ECB", "CBC", "CFB", "OFB");
     private static final int repeats = 16;

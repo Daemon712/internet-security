@@ -1,3 +1,5 @@
+package symmetric;
+
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import java.security.AlgorithmParameters;
