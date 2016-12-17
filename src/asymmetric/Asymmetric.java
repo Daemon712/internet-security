@@ -19,6 +19,7 @@ import java.io.PrintWriter;
 import java.security.*;
 import java.security.spec.KeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Asymmetric extends Application {
@@ -58,7 +59,8 @@ public class Asymmetric extends Application {
             Cipher cipher = Cipher.getInstance("RSA");
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
             String text = decryptedText.getText();
-            byte[] encrypted = cipher.doFinal(text.getBytes());
+            byte[] bytes = Arrays.copyOf(text.getBytes(), 117);
+            byte[] encrypted = cipher.doFinal(bytes);
             decryptedText.setText("");
             encryptedText.setText(PemUtils.encode(encrypted));
         }
