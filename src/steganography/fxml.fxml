@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<GridPane xmlns="http://javafx.com/javafx/8.0.91"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="steganography.Steganography">
+    <columnConstraints>
+        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
+        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
+        <ColumnConstraints fillWidth="true" hgrow="ALWAYS"/>
+    </columnConstraints>
+    <VBox GridPane.columnIndex="0">
+        <Button text="Choose Image" onMouseClicked="#chooseImage"/>
+        <ImageView fx:id="inputImage" preserveRatio="true" fitWidth="800" fitHeight="900"/>
+    </VBox>
+    <VBox GridPane.columnIndex="1">
+        <Button text="Choose File" onMouseClicked="#chooseFile"/>
+        <TextField fx:id="fileNameField" disable="true"/>
+        <Separator prefHeight="20"/>
+        <Label text="Password"/>
+        <TextField fx:id="passwordField"/>
+        <Button text="Encode" onMouseClicked="#encode"/>
+        <Separator prefHeight="20"/>
+    </VBox>
+    <VBox GridPane.columnIndex="2">
+        <Button text="Save Image" onMouseClicked="#saveImage"/>
+        <ImageView fx:id="outputImage" preserveRatio="true" fitWidth="800" fitHeight="900"/>
+    </VBox>
+</GridPane>
