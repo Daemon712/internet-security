@@ -90,7 +90,6 @@ public class Steganography extends Application {
             return;
         }
 
-        int[] stats = new int[Byte.MAX_VALUE - Byte.MIN_VALUE + 1];
         int n = 0;
         int[] pixel = new int[3];
         for (int i = 0; i < image.getHeight(); i++) {
@@ -100,10 +99,8 @@ public class Steganography extends Application {
                 pixel[1] = (pixel[1] & 0b11111000) | (data[n] & 0b00011100) >> 2;
                 pixel[2] = (pixel[2] & 0b11111100) | (data[n] & 0b00000011);
                 image.getRaster().setPixel(j, i, pixel);
-                stats[data[n] - Byte.MIN_VALUE]++;
             }
         }
-        System.out.println(Arrays.toString(stats));
         outputImage.setImage(SwingFXUtils.toFXImage(image, null));
     }
 
